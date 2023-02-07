@@ -928,11 +928,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\C#Repos\\WpfApp1\\WpfApp1.csproj",
+      "projectUniqueName": "G:\\C#Repos\\Media-List-Manager\\WpfApp1\\WpfApp1.csproj",
       "projectName": "WpfApp1",
-      "projectPath": "G:\\C#Repos\\WpfApp1\\WpfApp1.csproj",
+      "projectPath": "G:\\C#Repos\\Media-List-Manager\\WpfApp1\\WpfApp1.csproj",
       "packagesPath": "C:\\Users\\Кирилл\\.nuget\\packages\\",
-      "outputPath": "G:\\C#Repos\\WpfApp1\\obj\\",
+      "outputPath": "G:\\C#Repos\\Media-List-Manager\\WpfApp1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Кирилл\\AppData\\Roaming\\NuGet\\NuGet.Config",

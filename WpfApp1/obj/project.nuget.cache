@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iPEXLXfFIakijwx35hLd0BJ/7Tmc6jc53X44Wax578gLicYsiBRRzaOB68ITcbLw6O7eSiNBntkDPbeGuAVW5Q==",
+  "dgSpecHash": "Z4SLznqrmGl6/qZm+MN7oxGQ4qgmi5oa+GJPd7WLrNXxKihEfsCQOoA+oSnPjJPZhUtwmT9Pw8vIbkoyNypi1g==",
   "success": true,
-  "projectFilePath": "G:\\C#Repos\\WpfApp1\\WpfApp1.csproj",
+  "projectFilePath": "G:\\C#Repos\\Media-List-Manager\\WpfApp1\\WpfApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Кирилл\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Кирилл\\.nuget\\packages\\igdb\\2.3.1\\igdb.2.3.1.nupkg.sha512",
