@@ -1,0 +1,162 @@
+﻿<Window x:Class="WpfApp1.MVVM.View.AddMediaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp1.MVVM.View"
+        xmlns:viewModel="clr-namespace:WpfApp1.MVVM.ViewModel"
+        xmlns:views="clr-namespace:WpfApp1.MVVM.View"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        mc:Ignorable="d"
+        d:DesignHeight="500"
+        d:DesignWidth="400"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        ResizeMode="NoResize"
+        Foreground="{StaticResource MainTextColor}"
+        FontSize="30"
+        WindowStartupLocation="CenterScreen">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome  ResizeBorderThickness="10" />
+    </WindowChrome.WindowChrome>
+
+    <Border BorderBrush="{StaticResource MainTextColor}"
+            BorderThickness="2"
+            CornerRadius="10">
+        <Border Background="{StaticResource MainBackgroundColor}"
+                CornerRadius="10">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+
+                <ComboBox Grid.ColumnSpan="2"
+                          Margin="67,24,67,23"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          Text="{Binding MediaTypeName}"
+                          Style="{DynamicResource DefaultComboBoxStyle}"
+                          SelectedIndex="0">
+
+                    <ComboBoxItem Content="Game"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="Movie"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="Anime"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                </ComboBox>
+
+                <TextBlock Grid.Row="1"
+                           Grid.Column="0"
+                           Text=" Title"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="1"
+                         Style="{StaticResource DefaultTextBoxTheme}"
+                         Text="{Binding MediaTitle}"
+                         Margin="25" />
+
+                <TextBlock Grid.Row="2"
+                           Grid.Column="0"
+                           Text="Genre"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="2"
+                         Style="{StaticResource DefaultTextBoxTheme}"
+                         Text="{Binding Genre}"
+                         Margin="25" />
+
+                <TextBlock Grid.Row="3"
+                           Grid.Column="0"
+                           Text="Status"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <ComboBox Grid.Column="1"
+                          Grid.Row="3"
+                          Margin="25"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          Text="{Binding Tag}"
+                          Style="{DynamicResource DefaultComboBoxStyle}">
+                    <ComboBoxItem Content="Completed"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="Wishlist"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="In progress"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                </ComboBox>
+
+                <TextBlock Grid.Row="4"
+                           Grid.Column="0"
+                           Text="Score"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <ComboBox Grid.Column="1"
+                          Grid.Row="4"
+                          Margin="25"
+                          HorizontalContentAlignment="Center"
+                          VerticalContentAlignment="Center"
+                          Text="{Binding Score}"
+                          Style="{DynamicResource DefaultComboBoxStyle}">
+                    <ComboBoxItem Content="1"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="2"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="3"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="4"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                    <ComboBoxItem Content="5"
+                                  Style="{StaticResource DefaultComboBoxItemTheme}" />
+                </ComboBox>
+
+                <TextBlock Grid.Row="5"
+                           Grid.Column="0"
+                           Text="Developer"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center" />
+                <TextBox Grid.Column="1"
+                         Grid.Row="5"
+                         Style="{StaticResource DefaultTextBoxTheme}"
+                         Text="{Binding Developer}"
+                         Margin="25" />
+
+                <Button Content="Add Media"
+                        Grid.Row="6"
+                        Margin="15"
+                        FontSize="25"
+                        Style="{StaticResource ButtonTheme}"
+                        Command="{Binding AddMediaCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}">
+
+                </Button>
+                <Button Content="Cancel"
+                        Grid.Row="6"
+                        Grid.Column="1"
+                        Margin="15"
+                        Style="{StaticResource ButtonTheme}"
+                        FontSize="25"
+                        Command="{Binding CancelDialogCommand}"
+                        CommandParameter="{Binding RelativeSource={RelativeSource FindAncestor, 
+                           AncestorType={x:Type Window}}}" />
+            </Grid>
+        </Border>
+    </Border>
+</Window>

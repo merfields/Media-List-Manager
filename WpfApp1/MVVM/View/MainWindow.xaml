@@ -1,0 +1,171 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:viewModel="clr-namespace:WpfApp1.MVVM.ViewModel"
+        xmlns:views="clr-namespace:WpfApp1.MVVM.View"
+        mc:Ignorable="d"
+        FontSize="18"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Height="450"
+        Width="1000"
+        MinHeight="450"
+        MinWidth="1000"
+        WindowStartupLocation="CenterScreen"
+        Foreground="{StaticResource MainTextColor}">
+
+    <WindowChrome.WindowChrome>
+        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}"
+                      CaptionHeight="{Binding CaptionHeight}"
+                      GlassFrameThickness="{Binding GlassFrameThickness}" />
+    </WindowChrome.WindowChrome>
+
+    <Border BorderBrush="{StaticResource MainTextColor}"
+            BorderThickness="2"
+            CornerRadius="10">
+        <Border Background="{StaticResource MainBackgroundColor}"
+                CornerRadius="10">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <!--TitleBar-->
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3.1*" />
+                </Grid.RowDefinitions>
+
+                <Button Content="Add Media"
+                        Command="{Binding OpenAddMediaWindowCommand}"
+                        Style="{StaticResource ButtonTheme}"
+                        Cursor="Hand"
+                        WindowChrome.IsHitTestVisibleInChrome="True"
+                        Grid.RowSpan="2" />
+
+                <StackPanel Grid.Row="0"
+                            Grid.Column="2"
+                            Orientation="Horizontal"
+                            Panel.ZIndex="1">
+                    <Button Content="-"
+                            Command="{Binding MinimizeWindowCommand}"
+                            Style="{StaticResource WindowButton}"
+                            FlowDirection="RightToLeft"
+                            Width="23"
+                            Height="34" />
+                    <Button Content="X"
+                            Command="{Binding CloseWindowCommand}"
+                            Style="{StaticResource WindowButton}"
+                            Width="26"
+                            Height="37"
+                            Margin="0,0,5,0" />
+                </StackPanel>
+
+
+                <ScrollViewer Grid.Row="2"
+                              VerticalScrollBarVisibility="Hidden">
+                    <StackPanel Grid.Row="2">
+                        <Expander x:Name="GamesExpander"
+                                  Header="Games"
+                                  Foreground="#F1F1F1"
+                                  FontSize="20"
+                                  IsExpanded="True">
+
+                            <StackPanel>
+                                <RadioButton Content="All"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowGamesListCommand}"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Completed"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowGamesListCommand}"
+                                             CommandParameter="Completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Plan to play"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowGamesListCommand}"
+                                             CommandParameter="Not completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="In progress"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowGamesListCommand}"
+                                             CommandParameter="In progress"
+                                             GroupName="MediaListGroup" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander x:Name="MoviesExpander"
+                                  Header="Movies"
+                                  Foreground="#F1F1F1"
+                                  FontSize="20">
+                            <StackPanel>
+                                <RadioButton Content="All"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowMoviesListCommand}"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Completed"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowMoviesListCommand}"
+                                             CommandParameter="Completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Plan To Watch"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowMoviesListCommand}"
+                                             CommandParameter="Not completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="In progress"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowMoviesListCommand}"
+                                             CommandParameter="In progress"
+                                             GroupName="MediaListGroup" />
+                            </StackPanel>
+                        </Expander>
+
+                        <Expander x:Name="AnimeExpander"
+                                  Header="Anime"
+                                  Foreground="#F1F1F1"
+                                  FontSize="20">
+                            <StackPanel>
+                                <RadioButton Content="All"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowAnimeListCommand}"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Completed"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowAnimeListCommand}"
+                                             CommandParameter="Completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="Plan To Watch"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowAnimeListCommand}"
+                                             CommandParameter="Not completed"
+                                             GroupName="MediaListGroup" />
+                                <RadioButton Content="In progress"
+                                             Style="{StaticResource MenuButtonTheme}"
+                                             Command="{Binding ShowAnimeListCommand}"
+                                             CommandParameter="In progress"
+                                             GroupName="MediaListGroup" />
+                            </StackPanel>
+                        </Expander>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <ContentControl Grid.Row="0"
+                                Grid.RowSpan="3"
+                                Grid.Column="1"
+                                Grid.ColumnSpan="2"
+                                Margin="8"
+                                IsEnabled="True"
+                                Content="{Binding CurrentViewModel}">
+                </ContentControl>
+            </Grid>
+        </Border>
+    </Border>
+</Window>

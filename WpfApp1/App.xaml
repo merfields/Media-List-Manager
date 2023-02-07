@@ -1,0 +1,27 @@
+﻿<Application x:Class="WpfApp1.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:viewModel="clr-namespace:WpfApp1.MVVM.ViewModel"
+             xmlns:views="clr-namespace:WpfApp1.MVVM.View">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/Colors.xaml" />
+                <ResourceDictionary Source="Theme/ButtonsTheme.xaml" />
+                <ResourceDictionary Source="Theme/TextBoxTheme.xaml" />
+                <ResourceDictionary Source="Theme/ComboBoxTheme.xaml" />
+                <ResourceDictionary Source="Theme/ListViewTheme.xaml" />
+                <ResourceDictionary Source="Theme/DataGridStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:MediaListViewModel}">
+                <views:MediaListView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddMediaViewModel}">
+                <views:AddMediaView />
+            </DataTemplate>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
