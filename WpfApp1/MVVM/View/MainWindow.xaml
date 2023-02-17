@@ -50,10 +50,14 @@
                         WindowChrome.IsHitTestVisibleInChrome="True"
                         Grid.RowSpan="2" />
 
-                <StackPanel Grid.Row="0"
-                            Grid.Column="2"
-                            Orientation="Horizontal"
-                            Panel.ZIndex="1">
+                <StackPanel Grid.Row="
+                        0"
+                            Grid.Column="
+                        2"
+                            Orientation="
+                        Horizontal"
+                            Panel.ZIndex="
+                        1">
                     <Button Content="-"
                             Command="{Binding MinimizeWindowCommand}"
                             Style="{StaticResource WindowButton}"

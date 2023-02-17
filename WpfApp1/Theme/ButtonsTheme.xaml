@@ -89,6 +89,12 @@
             <Trigger Property="IsChecked"
                      Value="True">
                 <Setter Property="Background"
+                        Value="{StaticResource MainBrightColor}" />
+            </Trigger>
+
+            <Trigger Property="IsMouseOver"
+                     Value="True">
+                <Setter Property="Background"
                         Value="{StaticResource ButtonHighlightColor}" />
             </Trigger>
         </Style.Triggers>

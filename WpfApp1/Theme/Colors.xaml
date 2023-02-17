@@ -2,12 +2,14 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <SolidColorBrush x:Key="MainTextColor"
-                     Color="#F1F1F1" />
+                     Color="#FAFAFA" />
     <SolidColorBrush x:Key="MainBackgroundColor"
-                     Color="#100F0F" />
+                     Color="#121212" />
     <SolidColorBrush x:Key="ApplicationRedColor"
                      Color="#F25757" />
     <SolidColorBrush x:Key="ButtonHighlightColor"
-                     Color="#247BA0" />
+                     Color="#212121" />
+    <SolidColorBrush x:Key="MainBrightColor"
+                     Color="#8685EF" />
 
 </ResourceDictionary>

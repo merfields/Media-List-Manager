@@ -31,7 +31,8 @@
                   x:Name="_mediaGrid">
 
             <Behaviors:Interaction.Triggers>
-                <Behaviors:EventTrigger EventName="CellEditEnding">
+                <Behaviors:EventTrigger EventName="
+                  CellEditEnding">
                     <Behaviors:InvokeCommandAction Command="{Binding DataContext.EditTableEntryCommand, ElementName=_window}"
                                                    CommandParameter="{Binding SelectedItem, ElementName=_mediaGrid}" />
                 </Behaviors:EventTrigger>
