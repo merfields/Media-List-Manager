@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,11 +14,17 @@ namespace WpfApp1.MVVM
         public DbSet<Game> Games { get; set; } = null!;
         public DbSet<Movie> Movies { get; set; } = null!;
 
-        public ManagerContext(){}
+        public ManagerContext() { }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseNpgsql("Host=localhost;Port=5432;Database=listmanagerdb;Username=postgres;Password=12345");
+            string connectionString = CnnVal("ExampleDB");
+            optionsBuilder.UseNpgsql(connectionString);
+        }
+
+        public static string CnnVal(string name)
+        {
+            return ConfigurationManager.ConnectionStrings[name].ConnectionString;
         }
     }
 }

@@ -8,7 +8,6 @@
     ".NETCoreApp,Version=v6.0": {
       "WpfApp1/1.0.0": {
         "dependencies": {
-          "IGDB": "2.3.1",
           "Microsoft.EntityFrameworkCore": "7.0.2",
           "Microsoft.EntityFrameworkCore.Tools": "7.0.2",
           "Microsoft.Xaml.Behaviors.Wpf": "1.1.39",
@@ -27,19 +26,6 @@
           }
         }
       },
-      "IGDB/2.3.1": {
-        "dependencies": {
-          "Microsoft.CSharp": "4.7.0",
-          "RestEase": "1.5.5"
-        },
-        "runtime": {
-          "lib/netstandard2.0/IGDB.dll": {
-            "assemblyVersion": "2.3.1.0",
-            "fileVersion": "2.3.1.0"
-          }
-        }
-      },
-      "Microsoft.CSharp/4.7.0": {},
       "Microsoft.EntityFrameworkCore/7.0.2": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Abstractions": "7.0.2",
@@ -227,14 +213,6 @@
           }
         }
       },
-      "Newtonsoft.Json/11.0.1": {
-        "runtime": {
-          "lib/netstandard2.0/Newtonsoft.Json.dll": {
-            "assemblyVersion": "11.0.0.0",
-            "fileVersion": "11.0.1.21818"
-          }
-        }
-      },
       "Npgsql/7.0.1": {
         "dependencies": {
           "Microsoft.Extensions.Logging.Abstractions": "7.0.0",
@@ -258,17 +236,6 @@
           "lib/net6.0/Npgsql.EntityFrameworkCore.PostgreSQL.dll": {
             "assemblyVersion": "7.0.1.0",
             "fileVersion": "7.0.1.0"
-          }
-        }
-      },
-      "RestEase/1.5.5": {
-        "dependencies": {
-          "Newtonsoft.Json": "11.0.1"
-        },
-        "runtime": {
-          "lib/net5.0/RestEase.dll": {
-            "assemblyVersion": "1.5.5.0",
-            "fileVersion": "1.5.5.0"
           }
         }
       },
@@ -319,20 +286,6 @@
       "sha512": "sha512-lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "path": "humanizer.core/2.14.1",
       "hashPath": "humanizer.core.2.14.1.nupkg.sha512"
-    },
-    "IGDB/2.3.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-5d3F/PMYPsbWauxnm1u7fQumW/wqJcAbU9qfBsBhh5zwbPj+dFTGisKgfTtkndwutgIwEy60xjLcLcMQD37YVw==",
-      "path": "igdb/2.3.1",
-      "hashPath": "igdb.2.3.1.nupkg.sha512"
-    },
-    "Microsoft.CSharp/4.7.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pTj+D3uJWyN3My70i2Hqo+OXixq3Os2D1nJ2x92FFo6sk8fYS1m1WLNTs0Dc1uPaViH0YvEEwvzddQ7y4rhXmA==",
-      "path": "microsoft.csharp/4.7.0",
-      "hashPath": "microsoft.csharp.4.7.0.nupkg.sha512"
     },
     "Microsoft.EntityFrameworkCore/7.0.2": {
       "type": "package",
@@ -460,13 +413,6 @@
       "path": "mono.texttemplating/2.2.1",
       "hashPath": "mono.texttemplating.2.2.1.nupkg.sha512"
     },
-    "Newtonsoft.Json/11.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pNN4l+J6LlpIvHOeNdXlwxv39NPJ2B5klz+Rd2UQZIx30Squ5oND1Yy3wEAUoKn0GPUj6Yxt9lxlYWQqfZcvKg==",
-      "path": "newtonsoft.json/11.0.1",
-      "hashPath": "newtonsoft.json.11.0.1.nupkg.sha512"
-    },
     "Npgsql/7.0.1": {
       "type": "package",
       "serviceable": true,
@@ -480,13 +426,6 @@
       "sha512": "sha512-8txq2CsPWvWO4azZSBmKLKmYsL6dkGrarX2hJZY0Djx6uWZJGH9W0OTE1oHqn+aC5L+xrzyS+TM3kiKw2gdXuA==",
       "path": "npgsql.entityframeworkcore.postgresql/7.0.1",
       "hashPath": "npgsql.entityframeworkcore.postgresql.7.0.1.nupkg.sha512"
-    },
-    "RestEase/1.5.5": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-9JhAAObSV8MgrJG4teLfwaVPCnE64CRQw7YepypJgr1pKMi5peGVG+YqLjGwn+m3ucTRrhFW/sINdOusw9MYnQ==",
-      "path": "restease/1.5.5",
-      "hashPath": "restease.1.5.5.nupkg.sha512"
     },
     "System.CodeDom/4.4.0": {
       "type": "package",
