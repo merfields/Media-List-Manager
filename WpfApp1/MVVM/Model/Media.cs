@@ -136,5 +136,25 @@ namespace WpfApp1.MVVM
                 managerContext.SaveChanges();
             }
         }
+
+        public static void EditEntityById<TEntity>(TEntity changedMedia) where TEntity : Media
+        {
+            using (ManagerContext managerContext = new ManagerContext())
+            {
+                DbSet<TEntity> dbset = managerContext.Set<TEntity>();
+
+                TEntity entityToChange = (from s in dbset
+                                          where s.Id == changedMedia.Id
+                                          select s).First();
+                entityToChange.Genre = changedMedia.Genre;
+                entityToChange.Score = changedMedia.Score;
+                entityToChange.Tags = changedMedia.Tags;
+                if (changedMedia is Game)
+                {
+                    (entityToChange as Game).Developer = (changedMedia as Game).Developer;
+                }
+                managerContext.SaveChanges();
+            }
+        }
     }
 }

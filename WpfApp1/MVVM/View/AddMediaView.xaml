@@ -3,11 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:local="clr-namespace:WpfApp1.MVVM.View"
-        xmlns:viewModel="clr-namespace:WpfApp1.MVVM.ViewModel"
-        xmlns:views="clr-namespace:WpfApp1.MVVM.View"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        xmlns:conv="clr-namespace:WpfApp1.Core.Converters"
         mc:Ignorable="d"
         d:DesignHeight="500"
         d:DesignWidth="400"
@@ -50,7 +46,8 @@
                           VerticalContentAlignment="Center"
                           Text="{Binding MediaTypeName}"
                           Style="{DynamicResource DefaultComboBoxStyle}"
-                          SelectedIndex="0">
+                          SelectedIndex="0"
+                          x:Name="_mediaTypeComboBox">
 
                     <ComboBoxItem Content="Game"
                                   Style="{StaticResource DefaultComboBoxItemTheme}" />
@@ -130,13 +127,14 @@
                            Grid.Column="0"
                            Text="Developer"
                            HorizontalAlignment="Center"
-                           VerticalAlignment="Center" />
+                           VerticalAlignment="Center"
+                           Visibility="{Binding ElementName=_mediaTypeComboBox,Path=Text, Converter= {x:Static conv:MediaComboboxToVisibilityConverter.Instance}}" />
                 <TextBox Grid.Column="1"
                          Grid.Row="5"
                          Style="{StaticResource DefaultTextBoxTheme}"
                          Text="{Binding Developer}"
-                         Margin="25" />
-
+                         Margin="25"
+                         Visibility="{Binding ElementName=_mediaTypeComboBox,Path=Text, Converter= {x:Static conv:MediaComboboxToVisibilityConverter.Instance}}" />
                 <Button Content="Add Media"
                         Grid.Row="6"
                         Margin="15"

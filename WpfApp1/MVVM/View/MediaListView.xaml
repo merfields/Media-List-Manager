@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:WpfApp1.MVVM.View"
+             xmlns:conv="clr-namespace:WpfApp1.Core.Converters"
              mc:Ignorable="d"
-             x:Name="_window">
+             x:Name="_window"
+             xmlns:Behaviors="http://schemas.microsoft.com/xaml/behaviors">
     <Grid>
+        <FrameworkElement x:Name="Proxy"
+                          Visibility="Collapsed" />
         <DataGrid CanUserAddRows="False"
                   AutoGenerateColumns="False"
                   ItemsSource="{Binding MediaList}"
@@ -23,7 +27,16 @@
                   RowStyle="{StaticResource DataGridDefaultRowStyle}"
                   CellStyle="{StaticResource DataGridCellDefaultStyle}"
                   GridLinesVisibility="Vertical"
-                  VerticalGridLinesBrush="{StaticResource MainTextColor}">
+                  VerticalGridLinesBrush="{StaticResource MainTextColor}"
+                  x:Name="_mediaGrid">
+
+            <Behaviors:Interaction.Triggers>
+                <Behaviors:EventTrigger EventName="CellEditEnding">
+                    <Behaviors:InvokeCommandAction Command="{Binding DataContext.EditTableEntryCommand, ElementName=_window}"
+                                                   CommandParameter="{Binding SelectedItem, ElementName=_mediaGrid}" />
+                </Behaviors:EventTrigger>
+            </Behaviors:Interaction.Triggers>
+
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Title"
                                     Binding="{Binding Title}"
@@ -33,17 +46,21 @@
 
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Genre"
-                                    Binding="{Binding Genre}"
+                                    Binding="{Binding Genre,UpdateSourceTrigger=PropertyChanged}"
                                     Foreground="{StaticResource MainTextColor}"
                                     Width="*"
                                     EditingElementStyle="{StaticResource DefaultTextBoxTheme}">
 
                 </DataGridTextColumn>
                 <DataGridTextColumn Header="Developer"
-                                    Binding="{Binding Developer}"
+                                    Binding="{Binding Developer,UpdateSourceTrigger=PropertyChanged}"
                                     Foreground="{StaticResource MainTextColor}"
                                     Width="*"
-                                    EditingElementStyle="{StaticResource DefaultTextBoxTheme}">
+                                    EditingElementStyle="{StaticResource DefaultTextBoxTheme}"
+                                    Visibility="{Binding DataContext.MediaList[0], 
+                    Source={x:Reference Name=Proxy}, 
+                    Converter={x:Static conv:MediaListTypeToVisibilityConverter.Instance}}">
+
 
                 </DataGridTextColumn>
 
@@ -51,15 +68,15 @@
                                         Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding Score}"
+                            <TextBlock Text="{Binding Score,UpdateSourceTrigger=PropertyChanged}"
                                        Foreground="{StaticResource MainTextColor}" />
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
                             <ComboBox ItemsSource="{Binding DataContext.RatingList, ElementName=_window}"
-                                      SelectedItem="{Binding Score}"
-                                      Text="{Binding Score}"
+                                      SelectedItem="{Binding Score,UpdateSourceTrigger=PropertyChanged}"
+                                      Text="{Binding Score,UpdateSourceTrigger=PropertyChanged}"
                                       Style="{StaticResource ComboBoxListViewStyle}"
                                       ItemContainerStyle="{StaticResource DefaultComboBoxItemTheme}" />
                         </DataTemplate>
@@ -78,8 +95,8 @@
                     <DataGridTemplateColumn.CellEditingTemplate>
                         <DataTemplate>
                             <ComboBox ItemsSource="{Binding DataContext.StatusList, ElementName=_window}"
-                                      SelectedItem="{Binding Path= Tags[0]}"
-                                      Text="{Binding Path= Tags[0]}"
+                                      SelectedItem="{Binding Path= Tags[0],UpdateSourceTrigger=PropertyChanged}"
+                                      Text="{Binding Path= Tags[0],UpdateSourceTrigger=PropertyChanged}"
                                       Style="{StaticResource ComboBoxListViewStyle}"
                                       ItemContainerStyle="{StaticResource DefaultComboBoxItemTheme}" />
                         </DataTemplate>

@@ -57,10 +57,13 @@ namespace WpfApp1.MVVM.ViewModel
         }
 
         public CommandBase DeleteMediaCommand { get; set; }
+        public CommandBase EditTableEntryCommand { get; set; }
 
         public MediaListViewModel()
         {
             DeleteMediaCommand = new DeleteMediaCommand(this);
+            EditTableEntryCommand = new EditTableEntryCommand();
+
             using (ManagerContext managerContext = new ManagerContext())
             {
                 MediaList = Media.GetMediaWithTags<Game>(null);
