@@ -56,6 +56,8 @@
                     <ComboBoxItem Content="Anime"
                                   Style="{StaticResource DefaultComboBoxItemTheme}" />
                 </ComboBox>
+                
+                <!--Title-->
 
                 <TextBlock Grid.Row="1"
                            Grid.Column="0"
@@ -67,6 +69,8 @@
                          Style="{StaticResource DefaultTextBoxTheme}"
                          Text="{Binding MediaTitle}"
                          Margin="25" />
+                
+                <!--Genre-->
 
                 <TextBlock Grid.Row="2"
                            Grid.Column="0"
@@ -78,6 +82,8 @@
                          Style="{StaticResource DefaultTextBoxTheme}"
                          Text="{Binding Genre}"
                          Margin="25" />
+                
+                <!--Status-->
 
                 <TextBlock Grid.Row="3"
                            Grid.Column="0"
@@ -98,6 +104,8 @@
                     <ComboBoxItem Content="In progress"
                                   Style="{StaticResource DefaultComboBoxItemTheme}" />
                 </ComboBox>
+                
+                <!--Score-->
 
                 <TextBlock Grid.Row="4"
                            Grid.Column="0"
@@ -122,6 +130,8 @@
                     <ComboBoxItem Content="5"
                                   Style="{StaticResource DefaultComboBoxItemTheme}" />
                 </ComboBox>
+                
+                <!--Developer-->
 
                 <TextBlock Grid.Row="5"
                            Grid.Column="0"
@@ -135,6 +145,9 @@
                          Text="{Binding Developer}"
                          Margin="25"
                          Visibility="{Binding ElementName=_mediaTypeComboBox,Path=Text, Converter= {x:Static conv:MediaComboboxToVisibilityConverter.Instance}}" />
+                
+                <!--WindowButtons-->
+                
                 <Button Content="Add Media"
                         Grid.Row="6"
                         Margin="15"

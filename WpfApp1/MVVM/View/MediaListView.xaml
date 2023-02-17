@@ -53,6 +53,9 @@
                                     EditingElementStyle="{StaticResource DefaultTextBoxTheme}">
 
                 </DataGridTextColumn>
+                
+                <!---->
+                
                 <DataGridTextColumn Header="Developer"
                                     Binding="{Binding Developer,UpdateSourceTrigger=PropertyChanged}"
                                     Foreground="{StaticResource MainTextColor}"
@@ -64,7 +67,9 @@
 
 
                 </DataGridTextColumn>
-
+                
+                <!--Score column-->
+                
                 <DataGridTemplateColumn Header="Score"
                                         Width="auto">
                     <DataGridTemplateColumn.CellTemplate>
@@ -84,6 +89,7 @@
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
 
+                <!--Status column-->
 
                 <DataGridTemplateColumn Header="Status"
                                         Width="auto">
@@ -104,6 +110,7 @@
                     </DataGridTemplateColumn.CellEditingTemplate>
                 </DataGridTemplateColumn>
 
+                <!--Delete row button-->
                 <DataGridTemplateColumn Header=""
                                         Width="*">
                     <DataGridTemplateColumn.CellTemplate>
