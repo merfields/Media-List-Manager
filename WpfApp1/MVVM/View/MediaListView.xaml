@@ -31,8 +31,7 @@
                   x:Name="_mediaGrid">
 
             <Behaviors:Interaction.Triggers>
-                <Behaviors:EventTrigger EventName="
-                  CellEditEnding">
+                <Behaviors:EventTrigger EventName="CellEditEnding">
                     <Behaviors:InvokeCommandAction Command="{Binding DataContext.EditTableEntryCommand, ElementName=_window}"
                                                    CommandParameter="{Binding SelectedItem, ElementName=_mediaGrid}" />
                 </Behaviors:EventTrigger>
@@ -53,9 +52,9 @@
                                     EditingElementStyle="{StaticResource DefaultTextBoxTheme}">
 
                 </DataGridTextColumn>
-                
+
                 <!---->
-                
+
                 <DataGridTextColumn Header="Developer"
                                     Binding="{Binding Developer,UpdateSourceTrigger=PropertyChanged}"
                                     Foreground="{StaticResource MainTextColor}"
@@ -67,9 +66,9 @@
 
 
                 </DataGridTextColumn>
-                
+
                 <!--Score column-->
-                
+
                 <DataGridTemplateColumn Header="Score"
                                         Width="auto">
                     <DataGridTemplateColumn.CellTemplate>

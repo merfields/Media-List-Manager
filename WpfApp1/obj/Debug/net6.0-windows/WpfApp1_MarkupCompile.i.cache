@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-G:\C#Repos\ClonedRepos\Media-List-Manager\WpfApp1\obj\Debug\net6.0-windows\
+G:\C#Repos\Media-List-Manager\WpfApp1\obj\Debug\net6.0-windows\
 WpfApp1
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-G:\C#Repos\ClonedRepos\Media-List-Manager\WpfApp1\App.xaml
+G:\C#Repos\Media-List-Manager\WpfApp1\App.xaml
 101364381661
 
 3069629578
-2091077657398
+209-256862312
 MVVM\View\AddMediaView.xaml;MVVM\View\MainWindow.xaml;MVVM\View\MediaListView.xaml;Theme\ButtonsTheme.xaml;Theme\Colors.xaml;Theme\ComboBoxTheme.xaml;Theme\ComboBoxThemeColors.xaml;Theme\DataGridStyle.xaml;Theme\ListViewTheme.xaml;Theme\TextBoxTheme.xaml;
 
-False
+True
 
