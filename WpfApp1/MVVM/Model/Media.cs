@@ -14,82 +14,20 @@ namespace WpfApp1.MVVM
 {
     public abstract class Media : ObservableObject
     {
-        protected int id;
-        public int Id
-        {
-            get
-            {
-                return id;
-            }
-            set
-            {
-                id = value;
-                OnPropertyChanged(nameof(Id));
-            }
-        }
+        public int Id { get; set; }
+        public string Title { get; set; }
 
-        protected string title;
-        public string Title
-        {
-            get
-            {
-                return title;
-            }
-            set
-            {
-                title = value;
-                OnPropertyChanged(nameof(Title));
-            }
-        }
+        public string Genre { get; set; }
+        public int? Score { get; set; }
 
-        protected string genre;
-        public string Genre
-        {
-            get
-            {
-                return genre;
-            }
-            set
-            {
-                genre = value;
-                OnPropertyChanged(nameof(Genre));
-            }
-        }
-
-        protected int? score;
-        public int? Score
-        {
-            get
-            {
-                return score;
-            }
-            set
-            {
-                score = value;
-                OnPropertyChanged(nameof(Score));
-            }
-        }
-
-        protected List<string>? tags;
-        public List<string>? Tags
-        {
-            get
-            {
-                return tags;
-            }
-            set
-            {
-                tags = value;
-                OnPropertyChanged(nameof(Tags));
-            }
-        }
+        public List<string>? Tags { get; set; }
 
         public Media(string title = "Title not specifyed", string genre = "Genre not specifyed", int? score = 0, List<string>? tags = null)
         {
-            this.title = title;
-            this.genre = genre;
-            this.score = score;
-            this.tags = tags;
+            this.Title = title;
+            this.Genre = genre;
+            this.Score = score;
+            this.Tags = tags;
         }
 
         public static ObservableCollection<TEntity> GetMediaWithTags<TEntity>(string tags) where TEntity : Media
@@ -145,7 +83,7 @@ namespace WpfApp1.MVVM
 
                 TEntity entityToChange = (from s in dbset
                                           where s.Id == changedMedia.Id
-                                          select s).First();
+                                          select s).FirstOrDefault();
                 entityToChange.Genre = changedMedia.Genre;
                 entityToChange.Score = changedMedia.Score;
                 entityToChange.Tags = changedMedia.Tags;

@@ -12,24 +12,11 @@ namespace WpfApp1.MVVM
 {
     public class Game : Media
     {
-        private string? developer;
-
         public Game(string? title = null, string? genre = null, int? score = 0, List<string>? tags = null, String? developer = null) : base(title, genre, score, tags)
         {
             Developer = developer;
         }
 
-        public string? Developer
-        {
-            get
-            {
-                return developer;
-            }
-            set
-            {
-                developer = value;
-                OnPropertyChanged(nameof(Developer));
-            }
-        }
+        public string? Developer { get; set; }
     }
 }
